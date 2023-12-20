@@ -8,6 +8,7 @@ import { RootState } from '../../app/redux/store';
 import Pagination from "../components/Pagination/Pagination";
 import Filter from "@/components/Filter/Filter";
 import CompanyTable from "@/components/Loaders/CompanyTable";
+import Th from "@/components/Table/Th";
 
 const Home: React.FC = () => {
 
@@ -22,6 +23,15 @@ const Home: React.FC = () => {
 
   }, [dispatch, currentPage]);
 
+  const tableHeadItems = [
+    'Company Name',
+    'Address 1',
+    'Address 2',
+    'Zip',
+    'Status',
+    'Action',
+  ]
+
 
   // if (loading) {
   //   return <div>
@@ -34,37 +44,22 @@ const Home: React.FC = () => {
       <BgDesign />
 
       <div className="py-3 w-full">
-       
+
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
 
           {loading ? <div>
             <CompanyTable />
           </div> : <>
-              <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-semibold leading-tight">Companies</h2>
-                <Filter />
-              </div>
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-semibold leading-tight">Companies</h2>
+              <Filter />
+            </div>
             <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
 
               <table className="min-w-full leading-normal">
                 <thead>
-                  <tr>
-                    <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 dark:text-gray-200 dark:bg-gray-700 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                      Company Name
-                    </th>
-                    <th className="px-5 py-3 border-b-2 border-gray-200 dark:text-gray-200 dark:bg-gray-700 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                      Address 1
-                    </th>
-                    <th className="px-5 py-3 border-b-2 dark:text-gray-200 dark:bg-gray-700 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                      Address 2
-                    </th>
-                    <th className="px-5 py-3 border-b-2 dark:text-gray-200 dark:bg-gray-700 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                      Zip
-                    </th>
-                    <th className="px-5 py-3 border-b-2 dark:text-gray-200 dark:bg-gray-700 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                      Status
-                    </th>
-                    <th className="px-5 py-3 border-b-2 dark:text-gray-200 dark:bg-gray-700 border-gray-200 bg-gray-100" >Action</th>
+                    <tr>
+                      {tableHeadItems?.map((title, index) => <Th key={index} title={title} />)}
                   </tr>
                 </thead>
                 <tbody>
