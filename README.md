@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-## Note: redux-devtools-extension is an older package that's the reason please run this command for the NPM install more [details]([https://nextjs.org/](https://stackoverflow.com/questions/66239691/what-does-npm-install-legacy-peer-deps-do-exactly-when-is-it-recommended-wh))
+## Note: redux-devtools-extension is an older package that's the reason please run this command for the NPM install more [details]([https://stackoverflow.com/questions/66239691/what-does-npm-install-legacy-peer-deps-do-exactly-when-is-it-recommended-wh])
 ```bash
 npm install --legacy-peer-deps
 or 
