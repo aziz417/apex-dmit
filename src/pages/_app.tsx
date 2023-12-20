@@ -11,14 +11,16 @@ import Footer from '@/components/Footer';
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ProviderThm>
-      <Navbar />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
+
+          <Navbar />
           <Component {...pageProps} />
+          <Footer />
+          
         </PersistGate>
       </Provider>
-      <Footer />
-      </ProviderThm>
+    </ProviderThm>
   );
 };
 

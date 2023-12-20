@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar'
-import ProviderThm from '@/components/ProviderThm'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 
