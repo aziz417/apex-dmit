@@ -58,13 +58,13 @@ const Home: React.FC = () => {
 
               <table className="min-w-full leading-normal">
                 <thead>
-                    <tr>
-                      {tableHeadItems?.map((title, index) => <Th key={index} title={title} />)}
+                  <tr>
+                    {tableHeadItems?.map((title, index) => <Th key={index} title={title} />)}
                   </tr>
                 </thead>
                 <tbody>
 
-                  {data?.companys?.data?.map((item: any, index: number) => <tr key={index}>
+                  {data?.companys?.data?.length > 0 && data?.companys?.data?.map((item: any, index: number) => <tr key={index}>
                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <div className="flex">
                         <div className="flex-shrink-0 w-10 h-10">
@@ -108,6 +108,15 @@ const Home: React.FC = () => {
                       </button>
                     </td>
                   </tr>)}
+
+                  {data?.companys?.data?.length < 1 && <>
+                    <td></td>
+                    <td></td>
+                    <td className="flex justify-center items-center h-24 ">
+                      <h2>Records Not Found</h2>
+                    </td>
+                  </>
+                  }
                 </tbody>
               </table>
               <div className="px-5 py-1 border-b-2 border-gray-200 bg-gray-100 dark:text-gray-200 dark:bg-gray-700 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider flex justify-end rounded-b-lg">
@@ -122,19 +131,6 @@ const Home: React.FC = () => {
             </div>
           </>}
 
-
-
-
-
-
-          {/* <ReactPaginate
-            pageCount={companies?.companyData?.companys?.total/5} // Replace with the actual number of pages
-            pageRangeDisplayed={2}
-            marginPagesDisplayed={1}
-            onPageChange={handlePageChange}
-            containerClassName={'pagination'}
-            activeClassName={'active'}
-          /> */}
         </div>
       </div>
     </div>
